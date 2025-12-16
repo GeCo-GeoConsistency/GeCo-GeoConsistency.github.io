@@ -1,2 +1,2 @@
 # GeCo-GeoConsistency
-project page for geco
+project page for GeCo: A Differentiable Geometric Consistency Metric for Video Generation
