@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GeCo: A Differentiable Geometric Consistency Metric for Video Generation</title>
+
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">GeCo: A Differentiable Geometric Consistency Metric for Video Generation</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://shixuan-gu.me/">Leslie Gu</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://hurjunhwa.github.io/">Junhwa Hur</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=LQvi5XAAAAAJ">Charles Herrmann</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://fnzhan.com/">Fangneng Zhan</a><sup>3</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://zickler.seas.harvard.edu/pi-bio/">Todd Zickler</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://deqings.github.io/">Deqing Sun</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://vcg.seas.harvard.edu/people">Hanspeter Pfister</a><sup>1</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Harvard University,</span>
+            <span class="author-block"><sup>2</sup>Google DeepMind,</span>
+            <span class="author-block"><sup>3</sup>Massachusetts Institute of Technology</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/ShixuanGu/GeCo"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a>
+            </div>
+            Manuscript, code, and data will be released soon.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img id="teaser"
+           src="./static/images/teaser.png"
+           alt="Teaser image"
+           style="width: 100%; height: auto;" />
+      <p class="has-text">
+      <span class="dnerf">GeCo</span> pipeline. For each frame pair in a sliding window, we compute residual motion and depth errors and fuse them into scale-invariant inconsistency maps. Aggregating these maps over the window localizes artifacts in the target frame, while separate motion and structure maps provide complementary diagnostics.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+          We introduce <span class="dnerf">GeCo</span>, a geometry-grounded metric for jointly detecting geometric deformation and occlusion-inconsistency artifacts in static scenes. By fusing residual motion and depth priors, <span class="dnerf">GeCo</span> produces interpretable, dense consistency maps that reveal these artifacts. We use <span class="dnerf">GeCo</span> to systematically benchmark recent video generation models, uncovering common failure modes, and further employ it as a training-free guidance loss to reduce deformation artifacts during video generation.
+          </p> 
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+
+<section class="section is-centered">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Detect the deformation.</h2>
+    <div class="content has-text-justified">
+      <p>
+        <strong>GeCo</strong> measures geometric consistency of generated videos. 
+        <strong>Motion Map</strong> highlights motion inconsistency between object motion and motion induced by camera (deformation). 
+        <strong>Structure Map</strong> highlights depth reprojection errors that can detect suddenly appearing/disappearing objects, which compensates the motion map in occlusion regions.
+        Our metrics clearly detect various artifacts in generated videos, highlighted in each error map:
+      </p>
+      <ul>
+        <li><strong>Row 1:</strong> The bowl rotates and morphs into a cup.</li>
+        <li><strong>Row 2:</strong> The house deforms during camera panning.</li>
+        <li><strong>Row 3:</strong> The glass on the table gradually moves across the dining table.</li>
+        <li><strong>Row 4:</strong> The train remains static while the background morphs towards it.</li>
+        <li><strong>Row 5:</strong> The stove deforms and elongates during camera rotation.</li>
+        <li><strong>Row 6:</strong> The whole living room shrinks as the camera rotates.</li>
+        <li><strong>Row 7:</strong> The office scene is filled with sudden deformation during fast camera movement.</li>
+        <li><strong>Row 8:</strong> The table and stairs subtly deform when the camera moves forward.</li>
+      </ul>
+    </div>
+    <div class="columns is-centered">
+      <!-- w.o.guidance -->
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-4">Input Video</h2>
+          <video autoplay controls muted loop playsinline height="100%"><source src="./static/videos/sora_cup/sora_cup_source.mp4"type="video/mp4"></video>
+          <video autoplay controls muted loop playsinline height="100%"><source src="./static/videos/house/deform_house_source.mp4"type="video/mp4"></video>
+          <video autoplay controls muted loop playsinline height="100%"><source src="./static/videos/sora_living_room/sora_living_room_source.mp4"type="video/mp4"></video>
+          <video autoplay controls muted loop playsinline height="100%"><source src="./static/videos/cogv1.5_train/cogv_c16_3_source.mp4"type="video/mp4"></video>
+          <video autoplay controls muted loop playsinline height="100%"><source src="./static/videos/sora_rotation/sora_rotation_source.mp4"type="video/mp4"></video>
+          <video autoplay controls muted loop playsinline height="100%"><source src="./static/videos/sora_shrink_stair/sora_shrink_stair_source.mp4"type="video/mp4"></video>
+          <video autoplay controls muted loop playsinline height="100%"><source src="./static/videos/hunyuan_office/hunyuan_office_source.mp4"type="video/mp4"></video>
+          <video autoplay controls muted loop playsinline height="100%"><source src="./static/videos/sora_deform_stair/sora_deform_stair_source.mp4"type="video/mp4"></video>
+          
+        </div>        
+      </div>
+      <!--/ w.o.guidance -->`
+
+      <!-- w.guidance -->
+      <div class="column">
+        <h2 class="title is-4">Motion Map</h2>
+        <div class="columns is-centered">
+          <div class="column content">
+            <video autoplay controls muted loop playsinline height="100%"><source src="./static/videos/sora_cup/sora_cup_motion.mp4"type="video/mp4"></video>
+            <video autoplay controls muted loop playsinline height="100%"><source src="./static/videos/house/deform_house_motion.mp4"type="video/mp4"></video>
+            <video autoplay controls muted loop playsinline height="100%"><source src="./static/videos/sora_living_room/sora_living_room_motion.mp4"type="video/mp4"></video>
+            <video autoplay controls muted loop playsinline height="100%"><source src="./static/videos/cogv1.5_train/cogv_c16_3_motion.mp4"type="video/mp4"></video>
+            <video autoplay controls muted loop playsinline height="100%"><source src="./static/videos/sora_rotation/sora_rotation_motion.mp4"type="video/mp4"></video>
+             <video autoplay controls muted loop playsinline height="100%"><source src="./static/videos/sora_shrink_stair/sora_shrink_stair_motion.mp4"type="video/mp4"></video>
+             <video autoplay controls muted loop playsinline height="100%"><source src="./static/videos/hunyuan_office/hunyuan_office_motion.mp4"type="video/mp4"></video>
+              <video autoplay controls muted loop playsinline height="100%"><source src="./static/videos/sora_deform_stair/sora_deform_stair_motion.mp4"type="video/mp4"></video>
+          </div>
+        </div>
+      </div>
+      <!-- w.guidance -->
+
+      <!-- w.guidance -->
+      <div class="column ">
+        <h2 class="title is-4">Structure Map</h2>
+        <div class="columns is-centered">
+          <div class="column content">
+            <video autoplay controls muted loop playsinline height="100%"><source src="./static/videos/sora_cup/sora_cup_depth.mp4"type="video/mp4"></video>
+            <video autoplay controls muted loop playsinline height="100%"><source src="./static/videos/house/deform_house_depth.mp4"type="video/mp4"></video>
+            <video autoplay controls muted loop playsinline height="100%"><source src="./static/videos/sora_living_room/sora_living_room_depth.mp4"type="video/mp4"></video>
+            <video autoplay controls muted loop playsinline height="100%"><source src="./static/videos/cogv1.5_train/cogv_c16_3_depth.mp4"type="video/mp4"></video>
+            <video autoplay controls muted loop playsinline height="100%"><source src="./static/videos/sora_rotation/sora_rotation_depth.mp4"type="video/mp4"></video>
+            <video autoplay controls muted loop playsinline height="100%"><source src="./static/videos/sora_shrink_stair/sora_shrink_stair_depth.mp4"type="video/mp4"></video>
+            <video autoplay controls muted loop playsinline height="100%"><source src="./static/videos/hunyuan_office/hunyuan_office_depth.mp4"type="video/mp4"></video>
+            <video autoplay controls muted loop playsinline height="100%"><source src="./static/videos/sora_deform_stair/sora_deform_stair_depth.mp4"type="video/mp4"></video>
+          </div>
+        </div>
+      </div>
+      <!-- w.guidance -->
+      <!-- w.guidance -->
+      <div class="column">
+        <h2 class="title is-4">Fused Map</h2>
+        <div class="columns is-centered">
+          <div class="column content">
+            <video autoplay controls muted loop playsinline height="100%"><source src="./static/videos/sora_cup/sora_cup_all.mp4"type="video/mp4"></video>
+            <video autoplay controls muted loop playsinline height="100%"><source src="./static/videos/house/deform_house_all.mp4"type="video/mp4"></video>
+            <video autoplay controls muted loop playsinline height="100%"><source src="./static/videos/sora_living_room/sora_living_room_all.mp4"type="video/mp4"></video>
+            <video autoplay controls muted loop playsinline height="100%"><source src="./static/videos/cogv1.5_train/cogv_c16_3_all.mp4"type="video/mp4"></video>
+            <video autoplay controls muted loop playsinline height="100%"><source src="./static/videos/sora_rotation/sora_rotation_all.mp4"type="video/mp4"></video>
+            <video autoplay controls muted loop playsinline height="100%"><source src="./static/videos/sora_shrink_stair/sora_shrink_stair_all.mp4"type="video/mp4"></video>
+            <video autoplay controls muted loop playsinline height="100%"><source src="./static/videos/hunyuan_office/hunyuan_office_all.mp4"type="video/mp4"></video>
+            <video autoplay controls muted loop playsinline height="100%"><source src="./static/videos/sora_deform_stair/sora_deform_stair_all.mp4"type="video/mp4"></video>
+          </div>
+        </div>
+      </div>
+      <!-- w.guidance -->
+
+
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Fix the deformation.</h2>
+<div class="content has-text-justified">
+      <p>
+        Videos in the <strong>left column</strong> are generated by CogVideoX-5B <em>without</em> guidance. 
+        Videos in the <strong>right column</strong> are generated by CogVideoX-5B <em>with</em> <strong>GeCo</strong> guidance in a training-free manner. 
+        GeCo effectively reduces various deformation artifacts observed in the baseline:
+      </p>
+      <ul>
+        <li><strong>Row 1:</strong> The eaves of the Japanese house deform severely during camera panning.</li>
+        <li><strong>Row 2:</strong> The car's side skirt fractures into two disjoint segments.</li>
+        <li><strong>Row 3:</strong> The block structure deforms and wobbles during camera movement.</li>
+        <li><strong>Row 4:</strong> The sink drifts within the kitchen and elongates during camera rotation.</li>
+      </ul>
+    </div>
+    <div class="columns is-centered">
+      <!-- w.o.guidance -->
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-4">Without GeCo</h2>
+          <video autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/japanese_house.mp4"
+                    type="video/mp4">
+          </video>
+
+                    <video autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/car.mp4"
+                    type="video/mp4">
+          </video>
+                              <video autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/block.mp4"
+                    type="video/mp4">
+          </video>
+                                        <video autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/kitchen.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <!--/ w.o.guidance -->
+
+      <!-- w.guidance -->
+      <div class="column">
+        <h2 class="title is-4">With GeCo</h2>
+        <div class="columns is-centered">
+          <div class="column content">
+            <video autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/japanese_house_guidance.mp4"
+                      type="video/mp4">
+            </video>
+                      <video autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/car_guidance.mp4"
+                    type="video/mp4">
+          </video>
+                              <video autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/block_guidance.mp4"
+                    type="video/mp4">
+          </video>
+                                        <video autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/kitchen_guidance.mp4"
+                    type="video/mp4">
+          </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Stop the globe that can't be stopped.</h2>
+    <div class="content has-text-justified">
+      <p>
+        We observe a common failure mode where models fail to generate a static globe while camera orbits, a phenomenon we refer to as <strong>"the globe that can't be stopped."</strong> 
+        By applying <strong>GeCo</strong> guidance, we demonstrate that spurious object motion is effectively suppressed, ensuring the object remains static relative to the environment. 
+        This example demonstrates the improvement on <strong>CogVideoX-5B</strong>.
+      </p>
+    </div>
+    <div class="columns is-centered">
+      <!-- w.o.guidance -->
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-4">Without GeCo</h2>
+          <video autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/globe.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <!--/ w.o.guidance -->
+
+      <!-- w.guidance -->
+      <div class="column">
+        <h2 class="title is-4">With GeCo</h2>
+        <div class="columns is-centered">
+          <div class="column content">
+            <video autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/globe_guided.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Freeze the dog that can't be frozen.</h2>
+    <div class="content has-text-justified">
+      <p>
+        Similarly, models often struggle to generate static living subjects during camera orbits. 
+        For instance, when the prompt requires a dog to remain perfectly still, the baseline often hallucinates unintended animation or drift. 
+        By employing <strong>GeCo</strong> guidance, we successfully eliminate this spurious motion, ensuring the subject remains relatively frozen. 
+        The results shown here are generated using <strong>CogVideoX-5B</strong>.
+      </p>
+    </div>
+    <div class="columns is-centered">
+      <!-- w.o.guidance -->
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-4">Without GeCo</h2>
+          <video autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/dog.mp4"
+                    type="video/mp4">
+          </video>
+      
+        </div>
+      </div>
+      <!--/ w.o.guidance -->
+
+      <!-- w.guidance -->
+      <div class="column">
+        <h2 class="title is-4">With GeCo</h2>
+        <div class="columns is-centered">
+          <div class="column content">
+          <video autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/dog_guidance.mp4"
+                    type="video/mp4">
+          </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- <section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{park2021nerfies,
+  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
+  title     = {Nerfies: Deformable Neural Radiance Fields},
+  journal   = {ICCV},
+  year      = {2021},
+}</code></pre>
+  </div>
+</section> -->
+
+
+<footer class="footer">
+    <div class="content has-text-centered">
+      This website is borrowed from <a rel="https://github.com/nerfies/nerfies.github.io">nerfies</a>.
+    </div>
+</footer>
+
+
+
+</body>
+</html>
