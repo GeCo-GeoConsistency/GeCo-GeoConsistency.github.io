@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>GeCo: A Differentiable Geometric Consistency Metric for Video Generation</title>
 
-
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
         rel="stylesheet">
 
@@ -62,7 +61,6 @@
 
           <div class="column has-text-centered">
             <div class="publication-links">
-              <!-- PDF Link. -->
               <span class="link-block">
                 <a href=""
                    class="external-link button is-normal is-rounded is-dark">
@@ -81,7 +79,6 @@
                   <span>arXiv</span>
                 </a>
               </span>
-              <!-- Code Link. -->
               <span class="link-block">
                 <a href="https://github.com/ShixuanGu/GeCo"
                    class="external-link button is-normal is-rounded is-dark">
@@ -91,7 +88,6 @@
                   <span>Code</span>
                   </a>
               </span>
-              <!-- Dataset Link. -->
               <span class="link-block">
                 <a href=""
                    class="external-link button is-normal is-rounded is-dark">
@@ -126,7 +122,6 @@
 
 <section class="section">
   <div class="container is-max-desktop">
-    <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
@@ -137,7 +132,6 @@
         </div>
       </div>
     </div>
-    <!--/ Abstract. -->
     </div>
   </section>
 
@@ -164,78 +158,68 @@
       </ul>
     </div>
     <div class="columns is-centered">
-      <!-- w.o.guidance -->
       <div class="column">
         <div class="content">
           <h2 class="title is-4">Input Video</h2>
-          <video autoplay controls muted loop playsinline height="100%"><source src="./static/videos/sora_cup/sora_cup_source.mp4"type="video/mp4"></video>
-          <video autoplay controls muted loop playsinline height="100%"><source src="./static/videos/house/deform_house_source.mp4"type="video/mp4"></video>
-          <video autoplay controls muted loop playsinline height="100%"><source src="./static/videos/sora_living_room/sora_living_room_source.mp4"type="video/mp4"></video>
-          <video autoplay controls muted loop playsinline height="100%"><source src="./static/videos/cogv1.5_train/cogv_c16_3_source.mp4"type="video/mp4"></video>
-          <video autoplay controls muted loop playsinline height="100%"><source src="./static/videos/sora_rotation/sora_rotation_source.mp4"type="video/mp4"></video>
-          <video autoplay controls muted loop playsinline height="100%"><source src="./static/videos/sora_shrink_stair/sora_shrink_stair_source.mp4"type="video/mp4"></video>
-          <video autoplay controls muted loop playsinline height="100%"><source src="./static/videos/hunyuan_office/hunyuan_office_source.mp4"type="video/mp4"></video>
-          <video autoplay controls muted loop playsinline height="100%"><source src="./static/videos/sora_deform_stair/sora_deform_stair_source.mp4"type="video/mp4"></video>
+          <video autoplay controls muted loop playsinline width="100%"><source src="./static/videos/sora_cup/sora_cup_source.mp4"type="video/mp4"></video>
+          <video autoplay controls muted loop playsinline width="100%"><source src="./static/videos/house/deform_house_source.mp4"type="video/mp4"></video>
+          <video autoplay controls muted loop playsinline width="100%"><source src="./static/videos/sora_living_room/sora_living_room_source.mp4"type="video/mp4"></video>
+          <video autoplay controls muted loop playsinline width="100%"><source src="./static/videos/cogv1.5_train/cogv_c16_3_source.mp4"type="video/mp4"></video>
+          <video autoplay controls muted loop playsinline width="100%"><source src="./static/videos/sora_rotation/sora_rotation_source.mp4"type="video/mp4"></video>
+          <video autoplay controls muted loop playsinline width="100%"><source src="./static/videos/sora_shrink_stair/sora_shrink_stair_source.mp4"type="video/mp4"></video>
+          <video autoplay controls muted loop playsinline width="100%"><source src="./static/videos/hunyuan_office/hunyuan_office_source.mp4"type="video/mp4"></video>
+          <video autoplay controls muted loop playsinline width="100%"><source src="./static/videos/sora_deform_stair/sora_deform_stair_source.mp4"type="video/mp4"></video>
           
         </div>        
       </div>
-      <!--/ w.o.guidance -->`
+      `
 
-      <!-- w.guidance -->
       <div class="column">
         <h2 class="title is-4">Motion Map</h2>
         <div class="columns is-centered">
           <div class="column content">
-            <video autoplay controls muted loop playsinline height="100%"><source src="./static/videos/sora_cup/sora_cup_motion.mp4"type="video/mp4"></video>
-            <video autoplay controls muted loop playsinline height="100%"><source src="./static/videos/house/deform_house_motion.mp4"type="video/mp4"></video>
-            <video autoplay controls muted loop playsinline height="100%"><source src="./static/videos/sora_living_room/sora_living_room_motion.mp4"type="video/mp4"></video>
-            <video autoplay controls muted loop playsinline height="100%"><source src="./static/videos/cogv1.5_train/cogv_c16_3_motion.mp4"type="video/mp4"></video>
-            <video autoplay controls muted loop playsinline height="100%"><source src="./static/videos/sora_rotation/sora_rotation_motion.mp4"type="video/mp4"></video>
-             <video autoplay controls muted loop playsinline height="100%"><source src="./static/videos/sora_shrink_stair/sora_shrink_stair_motion.mp4"type="video/mp4"></video>
-             <video autoplay controls muted loop playsinline height="100%"><source src="./static/videos/hunyuan_office/hunyuan_office_motion.mp4"type="video/mp4"></video>
-              <video autoplay controls muted loop playsinline height="100%"><source src="./static/videos/sora_deform_stair/sora_deform_stair_motion.mp4"type="video/mp4"></video>
+            <video autoplay controls muted loop playsinline width="100%"><source src="./static/videos/sora_cup/sora_cup_motion.mp4"type="video/mp4"></video>
+            <video autoplay controls muted loop playsinline width="100%"><source src="./static/videos/house/deform_house_motion.mp4"type="video/mp4"></video>
+            <video autoplay controls muted loop playsinline width="100%"><source src="./static/videos/sora_living_room/sora_living_room_motion.mp4"type="video/mp4"></video>
+            <video autoplay controls muted loop playsinline width="100%"><source src="./static/videos/cogv1.5_train/cogv_c16_3_motion.mp4"type="video/mp4"></video>
+            <video autoplay controls muted loop playsinline width="100%"><source src="./static/videos/sora_rotation/sora_rotation_motion.mp4"type="video/mp4"></video>
+             <video autoplay controls muted loop playsinline width="100%"><source src="./static/videos/sora_shrink_stair/sora_shrink_stair_motion.mp4"type="video/mp4"></video>
+             <video autoplay controls muted loop playsinline width="100%"><source src="./static/videos/hunyuan_office/hunyuan_office_motion.mp4"type="video/mp4"></video>
+              <video autoplay controls muted loop playsinline width="100%"><source src="./static/videos/sora_deform_stair/sora_deform_stair_motion.mp4"type="video/mp4"></video>
           </div>
         </div>
       </div>
-      <!-- w.guidance -->
-
-      <!-- w.guidance -->
       <div class="column ">
         <h2 class="title is-4">Structure Map</h2>
         <div class="columns is-centered">
           <div class="column content">
-            <video autoplay controls muted loop playsinline height="100%"><source src="./static/videos/sora_cup/sora_cup_depth.mp4"type="video/mp4"></video>
-            <video autoplay controls muted loop playsinline height="100%"><source src="./static/videos/house/deform_house_depth.mp4"type="video/mp4"></video>
-            <video autoplay controls muted loop playsinline height="100%"><source src="./static/videos/sora_living_room/sora_living_room_depth.mp4"type="video/mp4"></video>
-            <video autoplay controls muted loop playsinline height="100%"><source src="./static/videos/cogv1.5_train/cogv_c16_3_depth.mp4"type="video/mp4"></video>
-            <video autoplay controls muted loop playsinline height="100%"><source src="./static/videos/sora_rotation/sora_rotation_depth.mp4"type="video/mp4"></video>
-            <video autoplay controls muted loop playsinline height="100%"><source src="./static/videos/sora_shrink_stair/sora_shrink_stair_depth.mp4"type="video/mp4"></video>
-            <video autoplay controls muted loop playsinline height="100%"><source src="./static/videos/hunyuan_office/hunyuan_office_depth.mp4"type="video/mp4"></video>
-            <video autoplay controls muted loop playsinline height="100%"><source src="./static/videos/sora_deform_stair/sora_deform_stair_depth.mp4"type="video/mp4"></video>
+            <video autoplay controls muted loop playsinline width="100%"><source src="./static/videos/sora_cup/sora_cup_depth.mp4"type="video/mp4"></video>
+            <video autoplay controls muted loop playsinline width="100%"><source src="./static/videos/house/deform_house_depth.mp4"type="video/mp4"></video>
+            <video autoplay controls muted loop playsinline width="100%"><source src="./static/videos/sora_living_room/sora_living_room_depth.mp4"type="video/mp4"></video>
+            <video autoplay controls muted loop playsinline width="100%"><source src="./static/videos/cogv1.5_train/cogv_c16_3_depth.mp4"type="video/mp4"></video>
+            <video autoplay controls muted loop playsinline width="100%"><source src="./static/videos/sora_rotation/sora_rotation_depth.mp4"type="video/mp4"></video>
+            <video autoplay controls muted loop playsinline width="100%"><source src="./static/videos/sora_shrink_stair/sora_shrink_stair_depth.mp4"type="video/mp4"></video>
+            <video autoplay controls muted loop playsinline width="100%"><source src="./static/videos/hunyuan_office/hunyuan_office_depth.mp4"type="video/mp4"></video>
+            <video autoplay controls muted loop playsinline width="100%"><source src="./static/videos/sora_deform_stair/sora_deform_stair_depth.mp4"type="video/mp4"></video>
           </div>
         </div>
       </div>
-      <!-- w.guidance -->
-      <!-- w.guidance -->
       <div class="column">
         <h2 class="title is-4">Fused Map</h2>
         <div class="columns is-centered">
           <div class="column content">
-            <video autoplay controls muted loop playsinline height="100%"><source src="./static/videos/sora_cup/sora_cup_all.mp4"type="video/mp4"></video>
-            <video autoplay controls muted loop playsinline height="100%"><source src="./static/videos/house/deform_house_all.mp4"type="video/mp4"></video>
-            <video autoplay controls muted loop playsinline height="100%"><source src="./static/videos/sora_living_room/sora_living_room_all.mp4"type="video/mp4"></video>
-            <video autoplay controls muted loop playsinline height="100%"><source src="./static/videos/cogv1.5_train/cogv_c16_3_all.mp4"type="video/mp4"></video>
-            <video autoplay controls muted loop playsinline height="100%"><source src="./static/videos/sora_rotation/sora_rotation_all.mp4"type="video/mp4"></video>
-            <video autoplay controls muted loop playsinline height="100%"><source src="./static/videos/sora_shrink_stair/sora_shrink_stair_all.mp4"type="video/mp4"></video>
-            <video autoplay controls muted loop playsinline height="100%"><source src="./static/videos/hunyuan_office/hunyuan_office_all.mp4"type="video/mp4"></video>
-            <video autoplay controls muted loop playsinline height="100%"><source src="./static/videos/sora_deform_stair/sora_deform_stair_all.mp4"type="video/mp4"></video>
+            <video autoplay controls muted loop playsinline width="100%"><source src="./static/videos/sora_cup/sora_cup_all.mp4"type="video/mp4"></video>
+            <video autoplay controls muted loop playsinline width="100%"><source src="./static/videos/house/deform_house_all.mp4"type="video/mp4"></video>
+            <video autoplay controls muted loop playsinline width="100%"><source src="./static/videos/sora_living_room/sora_living_room_all.mp4"type="video/mp4"></video>
+            <video autoplay controls muted loop playsinline width="100%"><source src="./static/videos/cogv1.5_train/cogv_c16_3_all.mp4"type="video/mp4"></video>
+            <video autoplay controls muted loop playsinline width="100%"><source src="./static/videos/sora_rotation/sora_rotation_all.mp4"type="video/mp4"></video>
+            <video autoplay controls muted loop playsinline width="100%"><source src="./static/videos/sora_shrink_stair/sora_shrink_stair_all.mp4"type="video/mp4"></video>
+            <video autoplay controls muted loop playsinline width="100%"><source src="./static/videos/hunyuan_office/hunyuan_office_all.mp4"type="video/mp4"></video>
+            <video autoplay controls muted loop playsinline width="100%"><source src="./static/videos/sora_deform_stair/sora_deform_stair_all.mp4"type="video/mp4"></video>
           </div>
         </div>
       </div>
-      <!-- w.guidance -->
-
-
-    </div>
+      </div>
   </div>
 </section>
 
@@ -259,49 +243,45 @@
     </div>
 
 
-    <div class="columns is-centered">
-      <!-- w.o.guidance -->
+    <div class="columns is-centered is-mobile">
       <div class="column">
         <div class="content">
           <h2 class="title is-4">Without GeCo</h2>
-          <video autoplay controls muted loop playsinline height="100%">
+          <video autoplay controls muted loop playsinline width="100%">
             <source src="./static/videos/japanese_house.mp4"
                     type="video/mp4">
           </video>
-          <video autoplay controls muted loop playsinline height="100%">
+          <video autoplay controls muted loop playsinline width="100%">
             <source src="./static/videos/car.mp4"
                     type="video/mp4">
           </video>
-                              <video autoplay controls muted loop playsinline height="100%">
+                      <video autoplay controls muted loop playsinline width="100%">
             <source src="./static/videos/block.mp4"
                     type="video/mp4">
           </video>
-                                        <video autoplay controls muted loop playsinline height="100%">
+                                    <video autoplay controls muted loop playsinline width="100%">
             <source src="./static/videos/kitchen.mp4"
                     type="video/mp4">
           </video>
         </div>
       </div>
-      <!--/ w.o.guidance -->
-
-      <!-- w.guidance -->
       <div class="column">
         <h2 class="title is-4">With GeCo</h2>
-        <div class="columns is-centered">
+        <div class="columns is-centered is-mobile">
           <div class="column content">
-            <video autoplay controls muted loop playsinline height="100%">
+            <video autoplay controls muted loop playsinline width="100%">
               <source src="./static/videos/japanese_house_guidance.mp4"
                       type="video/mp4">
             </video>
-                      <video autoplay controls muted loop playsinline height="100%">
+                      <video autoplay controls muted loop playsinline width="100%">
             <source src="./static/videos/car_guidance.mp4"
                     type="video/mp4">
           </video>
-                              <video autoplay controls muted loop playsinline height="100%">
+                      <video autoplay controls muted loop playsinline width="100%">
             <source src="./static/videos/block_guidance.mp4"
                     type="video/mp4">
           </video>
-                                        <video autoplay controls muted loop playsinline height="100%">
+                                    <video autoplay controls muted loop playsinline width="100%">
             <source src="./static/videos/kitchen_guidance.mp4"
                     type="video/mp4">
           </video>
@@ -317,35 +297,31 @@
   </p>
     </div>
 
-    <div class="columns is-centered">
-      <!-- w.o.guidance -->
+    <div class="columns is-centered is-mobile">
       <div class="column">
         <div class="content">
           <h2 class="title is-4">Without GeCo</h2>
         </div>
       </div>
-      <!--/ w.o.guidance -->
-
-      <!-- w.guidance -->
       <div class="column">
         <h2 class="title is-4">With GeCo</h2>
       </div>
     </div>
     <img src="./static/images/house.png" 
               alt="house" 
-              height="100%">
+              width="100%">
 
     <img src="./static/images/car.png" 
         alt="car" 
-        height="100%">
+        width="100%">
 
     <img src="./static/images/block.png" 
         alt="block" 
-        height="100%">
+        width="100%">
 
     <img src="./static/images/kitchen.png" 
               alt="kitchen" 
-              height="100%">
+              width="100%">
 
   </div>
 </section>
@@ -362,25 +338,21 @@
         This example demonstrates the improvement on <strong>CogVideoX-5B</strong>.
       </p>
     </div>
-    <div class="columns is-centered">
-      <!-- w.o.guidance -->
+    <div class="columns is-centered is-mobile">
       <div class="column">
         <div class="content">
           <h2 class="title is-4">Without GeCo</h2>
-          <video autoplay controls muted loop playsinline height="100%">
+          <video autoplay controls muted loop playsinline width="100%">
             <source src="./static/videos/globe.mp4"
                     type="video/mp4">
           </video>
         </div>
       </div>
-      <!--/ w.o.guidance -->
-
-      <!-- w.guidance -->
       <div class="column">
         <h2 class="title is-4">With GeCo</h2>
-        <div class="columns is-centered">
+        <div class="columns is-centered is-mobile">
           <div class="column content">
-            <video autoplay controls muted loop playsinline height="100%">
+            <video autoplay controls muted loop playsinline width="100%">
               <source src="./static/videos/globe_guided.mp4"
                       type="video/mp4">
             </video>
@@ -402,26 +374,22 @@
         The results shown here are generated using <strong>CogVideoX-5B</strong>.
       </p>
     </div>
-    <div class="columns is-centered">
-      <!-- w.o.guidance -->
+    <div class="columns is-centered is-mobile">
       <div class="column">
         <div class="content">
           <h2 class="title is-4">Without GeCo</h2>
-          <video autoplay controls muted loop playsinline height="100%">
+          <video autoplay controls muted loop playsinline width="100%">
             <source src="./static/videos/dog.mp4"
                     type="video/mp4">
           </video>
       
         </div>
       </div>
-      <!--/ w.o.guidance -->
-
-      <!-- w.guidance -->
       <div class="column">
         <h2 class="title is-4">With GeCo</h2>
-        <div class="columns is-centered">
+        <div class="columns is-centered is-mobile">
           <div class="column content">
-          <video autoplay controls muted loop playsinline height="100%">
+          <video autoplay controls muted loop playsinline width="100%">
             <source src="./static/videos/dog_guidance.mp4"
                     type="video/mp4">
           </video>
@@ -431,19 +399,6 @@
     </div>
   </div>
 </section>
-
-
-<!-- <section class="section" id="BibTeX">
-  <div class="container is-max-desktop content">
-    <h2 class="title">BibTeX</h2>
-    <pre><code>@article{park2021nerfies,
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Nerfies: Deformable Neural Radiance Fields},
-  journal   = {ICCV},
-  year      = {2021},
-}</code></pre>
-  </div>
-</section> -->
 
 
 <footer class="footer">
