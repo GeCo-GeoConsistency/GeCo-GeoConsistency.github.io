@@ -157,6 +157,179 @@
         <li><strong>Row 8:</strong> The table and stairs subtly deform when the camera moves forward.</li>
       </ul>
     </div>
+
+    <style>
+      .video-row {
+        margin-bottom: 0.5rem; /* Adjust this to make rows tighter or looser */
+      }
+      .header-row {
+        margin-bottom: 0.5rem;
+      }
+      .header-row .column {
+        font-weight: bold;
+        text-align: center;
+        font-size: 0.9rem; /* Slightly smaller font for mobile fitting */
+      }
+      @media screen and (max-width: 768px) {
+        .header-row .column {
+          font-size: 0.7rem; /* Even smaller for mobile headers */
+          padding: 0 2px;
+        }
+      }
+    </style>
+
+    <div class="columns is-centered is-mobile is-variable is-1 header-row">
+      <div class="column">Input Video</div>
+      <div class="column">Motion Map</div>
+      <div class="column">Structure Map</div>
+      <div class="column">Fused Map</div>
+    </div>
+
+    <div class="columns is-centered is-mobile is-variable is-1 video-row">
+      <div class="column">
+        <video autoplay controls muted loop playsinline width="100%"><source src="./static/videos/sora_cup/sora_cup_source.mp4" type="video/mp4"></video>
+      </div>
+      <div class="column">
+        <video autoplay controls muted loop playsinline width="100%"><source src="./static/videos/sora_cup/sora_cup_motion.mp4" type="video/mp4"></video>
+      </div>
+      <div class="column">
+        <video autoplay controls muted loop playsinline width="100%"><source src="./static/videos/sora_cup/sora_cup_depth.mp4" type="video/mp4"></video>
+      </div>
+      <div class="column">
+        <video autoplay controls muted loop playsinline width="100%"><source src="./static/videos/sora_cup/sora_cup_all.mp4" type="video/mp4"></video>
+      </div>
+    </div>
+
+    <div class="columns is-centered is-mobile is-variable is-1 video-row">
+      <div class="column">
+        <video autoplay controls muted loop playsinline width="100%"><source src="./static/videos/house/deform_house_source.mp4" type="video/mp4"></video>
+      </div>
+      <div class="column">
+        <video autoplay controls muted loop playsinline width="100%"><source src="./static/videos/house/deform_house_motion.mp4" type="video/mp4"></video>
+      </div>
+      <div class="column">
+        <video autoplay controls muted loop playsinline width="100%"><source src="./static/videos/house/deform_house_depth.mp4" type="video/mp4"></video>
+      </div>
+      <div class="column">
+        <video autoplay controls muted loop playsinline width="100%"><source src="./static/videos/house/deform_house_all.mp4" type="video/mp4"></video>
+      </div>
+    </div>
+
+    <div class="columns is-centered is-mobile is-variable is-1 video-row">
+      <div class="column">
+        <video autoplay controls muted loop playsinline width="100%"><source src="./static/videos/sora_living_room/sora_living_room_source.mp4" type="video/mp4"></video>
+      </div>
+      <div class="column">
+        <video autoplay controls muted loop playsinline width="100%"><source src="./static/videos/sora_living_room/sora_living_room_motion.mp4" type="video/mp4"></video>
+      </div>
+      <div class="column">
+        <video autoplay controls muted loop playsinline width="100%"><source src="./static/videos/sora_living_room/sora_living_room_depth.mp4" type="video/mp4"></video>
+      </div>
+      <div class="column">
+        <video autoplay controls muted loop playsinline width="100%"><source src="./static/videos/sora_living_room/sora_living_room_all.mp4" type="video/mp4"></video>
+      </div>
+    </div>
+
+    <div class="columns is-centered is-mobile is-variable is-1 video-row">
+      <div class="column">
+        <video autoplay controls muted loop playsinline width="100%"><source src="./static/videos/cogv1.5_train/cogv_c16_3_source.mp4" type="video/mp4"></video>
+      </div>
+      <div class="column">
+        <video autoplay controls muted loop playsinline width="100%"><source src="./static/videos/cogv1.5_train/cogv_c16_3_motion.mp4" type="video/mp4"></video>
+      </div>
+      <div class="column">
+        <video autoplay controls muted loop playsinline width="100%"><source src="./static/videos/cogv1.5_train/cogv_c16_3_depth.mp4" type="video/mp4"></video>
+      </div>
+      <div class="column">
+        <video autoplay controls muted loop playsinline width="100%"><source src="./static/videos/cogv1.5_train/cogv_c16_3_all.mp4" type="video/mp4"></video>
+      </div>
+    </div>
+
+    <div class="columns is-centered is-mobile is-variable is-1 video-row">
+      <div class="column">
+        <video autoplay controls muted loop playsinline width="100%"><source src="./static/videos/sora_rotation/sora_rotation_source.mp4" type="video/mp4"></video>
+      </div>
+      <div class="column">
+        <video autoplay controls muted loop playsinline width="100%"><source src="./static/videos/sora_rotation/sora_rotation_motion.mp4" type="video/mp4"></video>
+      </div>
+      <div class="column">
+        <video autoplay controls muted loop playsinline width="100%"><source src="./static/videos/sora_rotation/sora_rotation_depth.mp4" type="video/mp4"></video>
+      </div>
+      <div class="column">
+        <video autoplay controls muted loop playsinline width="100%"><source src="./static/videos/sora_rotation/sora_rotation_all.mp4" type="video/mp4"></video>
+      </div>
+    </div>
+
+    <div class="columns is-centered is-mobile is-variable is-1 video-row">
+      <div class="column">
+        <video autoplay controls muted loop playsinline width="100%"><source src="./static/videos/sora_shrink_stair/sora_shrink_stair_source.mp4" type="video/mp4"></video>
+      </div>
+      <div class="column">
+        <video autoplay controls muted loop playsinline width="100%"><source src="./static/videos/sora_shrink_stair/sora_shrink_stair_motion.mp4" type="video/mp4"></video>
+      </div>
+      <div class="column">
+        <video autoplay controls muted loop playsinline width="100%"><source src="./static/videos/sora_shrink_stair/sora_shrink_stair_depth.mp4" type="video/mp4"></video>
+      </div>
+      <div class="column">
+        <video autoplay controls muted loop playsinline width="100%"><source src="./static/videos/sora_shrink_stair/sora_shrink_stair_all.mp4" type="video/mp4"></video>
+      </div>
+    </div>
+
+    <div class="columns is-centered is-mobile is-variable is-1 video-row">
+      <div class="column">
+        <video autoplay controls muted loop playsinline width="100%"><source src="./static/videos/hunyuan_office/hunyuan_office_source.mp4" type="video/mp4"></video>
+      </div>
+      <div class="column">
+        <video autoplay controls muted loop playsinline width="100%"><source src="./static/videos/hunyuan_office/hunyuan_office_motion.mp4" type="video/mp4"></video>
+      </div>
+      <div class="column">
+        <video autoplay controls muted loop playsinline width="100%"><source src="./static/videos/hunyuan_office/hunyuan_office_depth.mp4" type="video/mp4"></video>
+      </div>
+      <div class="column">
+        <video autoplay controls muted loop playsinline width="100%"><source src="./static/videos/hunyuan_office/hunyuan_office_all.mp4" type="video/mp4"></video>
+      </div>
+    </div>
+
+    <div class="columns is-centered is-mobile is-variable is-1 video-row">
+      <div class="column">
+        <video autoplay controls muted loop playsinline width="100%"><source src="./static/videos/sora_deform_stair/sora_deform_stair_source.mp4" type="video/mp4"></video>
+      </div>
+      <div class="column">
+        <video autoplay controls muted loop playsinline width="100%"><source src="./static/videos/sora_deform_stair/sora_deform_stair_motion.mp4" type="video/mp4"></video>
+      </div>
+      <div class="column">
+        <video autoplay controls muted loop playsinline width="100%"><source src="./static/videos/sora_deform_stair/sora_deform_stair_depth.mp4" type="video/mp4"></video>
+      </div>
+      <div class="column">
+        <video autoplay controls muted loop playsinline width="100%"><source src="./static/videos/sora_deform_stair/sora_deform_stair_all.mp4" type="video/mp4"></video>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+  
+<!-- <section class="section is-centered">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Detect the deformation.</h2>
+    <div class="content has-text-justified">
+      <p>
+        <strong>GeCo</strong> measures geometric consistency of generated videos. 
+        <strong>Motion Map</strong> highlights motion inconsistency between object motion and motion induced by camera (deformation). 
+        <strong>Structure Map</strong> highlights depth reprojection errors that can detect suddenly appearing/disappearing objects, which compensates the motion map in occlusion regions.
+        Our metrics clearly detect various artifacts in generated videos, highlighted in each error map:
+      </p>
+      <ul>
+        <li><strong>Row 1:</strong> The bowl rotates and morphs into a cup.</li>
+        <li><strong>Row 2:</strong> The house deforms during camera panning.</li>
+        <li><strong>Row 3:</strong> The glass on the table gradually moves across the dining table.</li>
+        <li><strong>Row 4:</strong> The train remains static while the background morphs towards it.</li>
+        <li><strong>Row 5:</strong> The stove deforms and elongates during camera rotation.</li>
+        <li><strong>Row 6:</strong> The whole living room shrinks as the camera rotates.</li>
+        <li><strong>Row 7:</strong> The office scene is filled with sudden deformation during fast camera movement.</li>
+        <li><strong>Row 8:</strong> The table and stairs subtly deform when the camera moves forward.</li>
+      </ul>
+    </div>
     
     <div class="columns is-centered is-mobile">
       
@@ -224,7 +397,7 @@
       
     </div>
   </div>
-</section>
+</section> -->
 
 
 
