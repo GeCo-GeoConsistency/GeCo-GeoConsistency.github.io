@@ -148,10 +148,10 @@
     <h2 class="title is-3">Detect the deformation.</h2>
     <div class="content has-text-justified">
       <p>
-        <strong>GeCo</strong> measures geometric consistency of generated videos. 
+        <strong>GeCo</strong> detects geometric consistency of generated videos. 
         <strong>Motion Map</strong> highlights motion inconsistency between object motion and motion induced by camera (deformation). 
         <strong>Structure Map</strong> highlights depth reprojection errors that can detect suddenly appearing/disappearing objects, which compensates the motion map in occlusion regions.
-        Our metrics clearly detect various artifacts in generated videos, highlighted in each error map:
+        While <strong>Fused Map</strong> combines both cues to clearly detect various artifacts in generated videos.
       </p>
       <ul>
         <li><strong>Row 1:</strong> The bowl rotates and morphs into a cup.</li>
@@ -312,6 +312,21 @@
       </div>
     </div>
 
+  </div>
+</section>
+
+<section class="section is-centered">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Measure the deformation.</h2>
+    <div class="content has-text-justified">
+      <p>
+        <strong>GeCo</strong> quantitatively measures geometric consistency and systematically benchmarks recent video generation models across 4 scenarios. Each scenario contains 80 videos; in total, <strong>GeCo-Eval</strong> Benchmark comprises 2,560 videos. Please refer to the paper for full benchmark details and evaluation protocol.
+      </p>
+      <img id="teaser"
+           src="./static/images/geco-eval.png"
+           alt="Teaser image"
+           style="width: 100%; height: auto;" />
+    </div>
   </div>
 </section>
 
